@@ -14,6 +14,7 @@ public class TestPerson {
 		Person p1 = (Person) context.getBean("person");
 		
 		System.out.println(p1);
+		context.close();
 
 	}
 

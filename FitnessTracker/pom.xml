@@ -11,6 +11,8 @@
   <properties>
         <java-version>1.8</java-version>
         <spring-version>4.3.18.RELEASE</spring-version>
+        <hibernate-validator>4.3.2.Final</hibernate-validator>
+        <jackson-version>2.9.6</jackson-version>
   </properties>
   
   <dependencies>
@@ -38,6 +40,40 @@
     	<version>1.2</version>
     	<scope>provided</scope>
     </dependency>
+    
+    <!-- Hibernate Validator -->
+    <dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>${hibernate-validator}</version>
+	</dependency>
+
+	<!-- JSON marshaling -->
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>${jackson-version}</version>
+	</dependency>
+
+	<!-- XML marshaling -->
+	<dependency>
+		<groupId>com.thoughtworks.xstream</groupId>
+		<artifactId>xstream</artifactId>
+		<version>1.4.10</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-oxm</artifactId>
+		<version>${spring-version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-core</artifactId>
+		<version>4.2.7.RELEASE</version>
+	</dependency>
+	
   </dependencies>
   
   <build>

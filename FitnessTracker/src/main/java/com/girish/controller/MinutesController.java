@@ -3,6 +3,7 @@ package com.girish.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +12,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.girish.business.Activity;
 import com.girish.business.Exercise;
+import com.girish.service.FitTrackerService;
 
 @Controller
 public class MinutesController {
+	
+	@Autowired
+	FitTrackerService service;
 	
 	@RequestMapping(value = "/addMinutes")
 	public String addMinutes(@ModelAttribute("exercise") Exercise exercise) {
@@ -30,25 +35,7 @@ public class MinutesController {
 	public @ResponseBody List<Activity> findAllActivities() {
 		List<Activity> activities = new ArrayList<>();
 		
-		Activity run = new Activity();
-		run.setDesc("run");
-		activities.add(run);
-		
-		Activity bike = new Activity();
-		bike.setDesc("bike");
-		activities.add(bike);
-		
-		Activity jog = new Activity();
-		jog.setDesc("jog");
-		activities.add(jog);
-		
-		Activity swim = new Activity();
-		swim.setDesc("swim");
-		activities.add(swim);
-		
-		Activity play = new Activity();
-		play.setDesc("play");
-		activities.add(play);
+		activities = service.findAllActivities();
 		
 		return activities;
 	}

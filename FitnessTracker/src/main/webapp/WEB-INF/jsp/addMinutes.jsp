@@ -15,6 +15,11 @@
 		.myStyle {
 			font-size: 24px;
 		}
+		.error {
+		color: #ff0000;
+		font-style: italic;
+		font-size: 150%;
+	}
 	</style>
 </head>
 <body>

@@ -3,8 +3,18 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-  <display-name>Archetype Created Web Application</display-name>
-  <!-- The front controller of this Spring Web application, responsible for handling all application requests -->
+	<display-name>Archetype Created Web Application</display-name>
+	<!-- The front controller of this Spring Web application, responsible for 
+		handling all application requests -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:/jpaContext.xml</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
 	<servlet>
 		<servlet-name>fitTrackerServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -20,18 +30,16 @@
 		<servlet-name>fitTrackerServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
+
 	<!-- resolving static resources like pdfs -->
-<!-- 	<servlet-mapping>
-		<servlet-name>fitTrackerServlet</servlet-name>
-		<url-pattern>/pdfs/**</url-pattern>
-	</servlet-mapping> -->
-	
+	<!-- <servlet-mapping> <servlet-name>fitTrackerServlet</servlet-name> <url-pattern>/pdfs/**</url-pattern> 
+		</servlet-mapping> -->
+
 	<!-- mapping for json request -->
 	<servlet-mapping>
 		<servlet-name>fitTrackerServlet</servlet-name>
 		<url-pattern>*.json</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 </web-app>

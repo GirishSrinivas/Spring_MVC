@@ -10,7 +10,6 @@ import com.girish.business.Activity;
 @Repository
 public class FitTrackerRepositoryImpl implements FitTrackerRepository {
 
-	@Override
 	public List<Activity> findAllActivities() {
 		List<Activity> activities = new ArrayList<>();
 		

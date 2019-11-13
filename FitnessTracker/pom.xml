@@ -15,7 +15,7 @@
 		<hibernate-validator>4.2.0.Final</hibernate-validator>
 		<hibernate-entitymanager>4.1.9.Final</hibernate-entitymanager>
 		<mysql-connector>5.1.21</mysql-connector>
-		<jackson-version>2.9.6</jackson-version>
+		<jackson-version>2.9.10.1</jackson-version>
 	</properties>
 
 	<dependencies>
